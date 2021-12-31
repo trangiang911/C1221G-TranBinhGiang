@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        form{
+            margin-left: 25px;
+        }
+    </style>
+</head>
+<body>
+
+<div style="background: cadetblue;width: 450px;height: 230px;margin-left: 450px; position: relative;">
+    <h2 style="background: orange; text-align: center;color: aliceblue">SỞ THÍCH CỦA BẠN</h2>
+    <form style="background: red; width: 400px; position: absolute; ">
+        <table>
+            <tr>
+                <td>Họ và tên</td>
+                <td><input type="text" name="họ và tên"></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="text" name="địa chỉ email"></td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top">Sở thích</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td><input type="checkbox" name="hobbies"> Thể thao</td>
+                            <td><input type="checkbox" name="hobbies"> Âm nhạc</td>
+                            <td><input type="checkbox" name="hobbies"> Đọc sách</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="hobbies"> Lướt web</td>
+                            <td><input type="checkbox" name="hobbies"> Chơi game</td>
+                            <td><input type="checkbox" name="hobbies"> Điện ảnh</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="hobbies"> Du lịch</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <button type="submit" style="margin-left: 60px;margin-top: 5px">Xác nhận BTN</button>
+        <button type="reset" style="margin-left: 10px">Clear thông tin</button>
+    </form>
+</div>
+<div style="margin-left: 450px;height: 400px; width:451;background-color: darkgreen;margin-right: 449px;position: relative;">
+    <h2 style="text-align: center; background-color: chocolate;">Đăng ký học viên</h2>
+    <form style="position: absolute;background-color: darkmagenta; margin-left: 100px; margin-top: 20px;">
+        <table>
+            <tr>
+                <td>Họ và tên</td>
+                <td><input type="text" name="name" placeholder="Nhập tên"></td>
+            </tr>
+            <tr>
+                <td>Ngày sinh</td>
+                <td><input type="date" name="date"></td>
+            </tr>
+            <tr>
+                <td>Giới tính</td>
+                <td><input type="radio" name="gender">Nam <input type="radio" name="gender">Nữ</td>
+            </tr>
+            <tr style="height: 100px; vertical-align: top;">
+                <td>Địa chỉ</td>
+                <td><input type="text" name="add" style="height: 100px;"></td>
+            </tr>
+            <tr>
+                <td>lớp</td>
+                <td><select>
+                    <option>-C1221G1-</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="text" name="mail"></td>
+            </tr>
+            <tr>
+                <td>Điện thoại</td>
+                <td><input type="text" name="phone"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="button" name="btsummit" value="Đăng ký"> <input type="button" name="btreset" value="Nhập lại"></td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>
