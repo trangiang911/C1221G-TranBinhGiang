@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<div>
+<table id="table">
+    <tr>
+        <td colspan="5"><input id="kq" type="text"></td>
+    </tr>
+    <tr>
+        <td><input type="button" name="bttn" value="7" onclick="so()"></td>
+        <td><input type="button" name="bttn" value="8" onclick="so()"></td>
+        <td><input type="button" name="bttn" value="9" onclick="so()"></td>
+        <td><input type="button" name="bttn" value="/" onclick="so()"></td>
+        <td><input type="button" name="bttn" value="AC" onclick="so()"></td>
+    </tr>
+    <tr>
+        <td><input type="button" name="bttn" value="4" onclick="so()"></td>
+        <td><input type="button" name="bttn" value="5" onclick="so()"></td>
+        <td><input type="button" name="bttn" value="6" onclick="so()"></td>
+        <td><input type="button" name="bttn" value="x" onclick="so()"></td>
+        <td><input type="button" name="bttn" value="C" onclick="so()"></td>
+    </tr>
+    <tr>
+        <td><input type="button" name="bttn" value="1" onclick="so()"></td>
+        <td><input type="button" name="bttn" value="2" onclick="so()"></td>
+        <td><input type="button" name="bttn" value="3" onclick="so()"></td>
+        <td><input type="button" name="bttn" value="+" onclick="so()"></td>
+        <td><input type="button" name="bttn" value="=" onclick="so()"></td>
+    </tr>
+    <tr>
+        <td><input type="button" name="bttn" value="0" onclick="so()"></td>
+        <td><input type="button" name="bttn" value="." onclick="so()"></td>
+        <td><input type="button" name="bttn" value="-" onclick="so()"></td>
+    </tr>
+</table>
+</div>
+    <script>
+        function so(){
+            let y=table.getElementsByTagName('input').value;
+            // document.getElementById('kq').value+=document.getElementsByName('bttn').value
+            console.log(y)
+        }
+
+    </script>
+</body>
+</html>

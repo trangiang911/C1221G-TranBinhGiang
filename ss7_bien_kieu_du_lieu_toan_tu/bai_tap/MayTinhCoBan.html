@@ -7,16 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="text" id="1"><br>
-    <input type="text" id="2"><br>
-    <button id="3" onclick="giang('+')">+</button>
-    <button id="4" onclick="giang('-')">-</button>
-    <button id="5" onclick="giang('*')">x</button>
-    <button id="6" onclick="giang('/')">/</button>
+    <input type="text" id="a"><br>
+    <input type="text" id="b"><br>
+    <button onclick="tinhToan('+')">+</button>
+    <button onclick="tinhToan('-')">-</button>
+    <button onclick="tinhToan('*')">x</button>
+    <button onclick="tinhToan('/')">/</button>
 <script>
-        function giang(bien) {
-        let x=parseInt(document.getElementById(1).value);
-        let y=parseInt(document.getElementById(2).value);
+        function tinhToan(bien) {
+        let x=parseInt(document.getElementById("a").value);
+        let y=parseInt(document.getElementById("b").value);
         if (bien == '+')
             alert(x+y)        
         else if (bien == '-')
