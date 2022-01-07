@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let soDien=parseFloat(prompt('Nhập số điện:'));
+        let tien;
+        if (soDien<=100){
+            tien=soDien*600
+        }
+        else if(soDien<=150){
+            tien=100*600+(soDien-100)*700
+        }
+        else if(soDien<=200){
+            tien=100*600+50*700+(soDien-150)*900
+        }
+        else {
+            tien=100*600+50*700+50*900+(soDien-200)*1100
+        }
+        alert('Giá điện'+tien)
+
+    </script>
+</body>
+</html>

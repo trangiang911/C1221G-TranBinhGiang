@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let x=parseFloat(prompt('Nhập lương:'))
+        let thue;
+        if(x<=4){
+            alert('khỏi thuế')
+        }
+        else if(x<=6){
+            thue=((x-4)*5)/100
+        }
+        else if(x<=9){
+            thue=(2*5)/100+((x-6)*10)/100
+        }
+        else if(x<=14){
+            thue=(2*5)/100+(3*10)/100+((x-9)*15)/100
+        }
+        else if(x<=24){
+            thue=(2*5)/100+(3*10)/100+(5*15)/100+((x-14)*20)/100
+        }
+        else if(x<=44){
+            thue=(2*5)/100+(3*10)/100+(5*15)/100+(10*20)/100+((x-24)*25)/100
+        }
+        else if(x<=84){
+            thue=(2*5)/100+(3*10)/100+(5*15)/100+(10*20)/100+(20*25)/100+((x-44)*30)/100
+        }
+        else{
+            thue=(2*5)/100+(3*10)/100+(5*15)/100+(10*20)/100+(20*25)/100+(40*30)/100+((x-84)*35)/100
+        }
+        alert('số thuế bạn phải cống hiến là'+thue)
+    </script>
+</body>
+</html>
