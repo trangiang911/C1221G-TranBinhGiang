@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<div>
+<table id="table">
+    <tr>
+        <td colspan="5"><input id="kq" type="text"></td>
+    </tr>
+    <tr>
+        <td><input type="button" name="bttn" value="7" onclick="so(this.value)"></td>
+        <td><input type="button" name="bttn" value="8" onclick="so(this.value)"></td>
+        <td><input type="button" name="bttn" value="9" onclick="so(this.value)"></td>
+        <td><input type="button" name="bttn" value="/" onclick="so(this.value)"></td>
+        <td><input type="button" name="bttn" value="AC" onclick="xoa()"></td>
+    </tr>
+    <tr>
+        <td><input type="button" name="bttn" value="4" onclick="so(this.value)"></td>
+        <td><input type="button" name="bttn" value="5" onclick="so(this.value)"></td>
+        <td><input type="button" name="bttn" value="6" onclick="so(this.value)"></td>
+        <td><input type="button" name="bttn" value="*" onclick="so(this.value)"></td>
+        <td><input type="button" name="bttn" value="C" onclick="xoahet()"></td>
+    </tr>
+    <tr>
+        <td><input type="button" name="bttn" value="1" onclick="so(this.value)"></td>
+        <td><input type="button" name="bttn" value="2" onclick="so(this.value)"></td>
+        <td><input type="button" name="bttn" value="3" onclick="so(this.value)"></td>
+        <td><input type="button" name="bttn" value="+" onclick="so(this.value)"></td>
+        <td><input type="button" name="bttn" value="=" onclick="bang()"></td>
+    </tr>
+    <tr>
+        <td><input type="button" name="bttn" value="0" onclick="so(this.value)"></td>
+        <td><input type="button" name="bttn" value="." onclick="so(this.value)"></td>
+        <td><input type="button" name="bttn" value="-" onclick="so(this.value)"></td>
+    </tr>
+</table>
+</div>
+    <script>
+        function so(so){
+            let  n=document.getElementById("kq").value
+            document.getElementById("kq").value=n+so
+        }
+        function bang(){
+            let str=document.getElementById("kq").value
+            let ketqua=eval(str)
+            document.getElementById("kq").value=ketqua
+        }
+        function xoa(){
+            let del=document.getElementById("kq").value
+            document.getElementById('kq').value=del.substr(0,del.length-1)
+        }
+        function xoahet(){
+            let dellAll=document.getElementById('kq').value
+            dellAll=' '
+            document.getElementById('kq').value=dellAll
+        }
+    </script>
+</body>
+</html>
