@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let nhietDo=parseFloat(prompt('Nhập Nhiệt độ'))
+        while (nhietDo<20 || nhietDo>100) {
+            if(nhietDo<20){nhietDo=parseFloat(prompt('Tăng nhiệt độ dùm:'))}
+            else if(nhietDo>100){nhietDo=parseFloat(prompt('Giảm đi:'))}
+        }
+        document.write(nhietDo)
+    </script>
+</body>
+</html>
