@@ -10,22 +10,25 @@
     <input type="button" value="Chơi" id="batdau" onclick="start()">
     <script>
         function start(){
+            let cont=0;
             let x1=parseInt(prompt('Nhập khoảng max:'))
             let x2=parseInt(prompt('Nhập khoảng min:'))
             x3=(Math.floor(Math.random()*(x1-x2+1))+x2)
+            console.log(x3)
             let y=parseInt(prompt('Số dự đoán của bạn'))
-            while (y!=x3) {
+            
+            for (i=0;i<3;i++) {
                 if(y == x3){
+                    alert('Hay lắm con trai')
                     break;
                 }
                 else if(y>x3){
-                    y=prompt('Đoán lại đi con trai, hơi lớn rồi đấy:')
+                    y=prompt('Đoán lại đi con trai, hơi lớn rồi đấy:') 
                 }
                 else if(y<x3){
-                    y=prompt('Đoán lại đi con trai, hơi bé rồi đấy:')
-                }
-            alert('Hay lắm con trai của ta');    
-            }
+                    y=prompt('Đoán lại đi con trai, hơi bé rồi đấy:')      
+                }  alert('quá 3 lần');break;          
+            } 
         }
 
     </script>
