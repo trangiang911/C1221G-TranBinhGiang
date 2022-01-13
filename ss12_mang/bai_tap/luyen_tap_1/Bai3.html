@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [];
+        let doDai=prompt('Nhập độ dài mảng:')
+        let tong = 0;
+        for (i = 0; i < doDai; i++) {
+            arr[i] = parseInt(prompt('Nhập:'))
+            tong += arr[i]
+        }
+        document.write(arr + '<br>')
+        let tB = tong / (arr.length)
+        let max = Math.max.apply(Math, arr)
+        document.write('giá trị lớn nhất:' + max + '<br>')
+        document.write('Giá trị trung bình của mảng:' + tB)
+
+
+    </script>
+</body>
+
+</html>

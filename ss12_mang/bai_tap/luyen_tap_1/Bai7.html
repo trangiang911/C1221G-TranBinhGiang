@@ -13,19 +13,15 @@
         let arr = []
         for (i = 0; i < 10; i++) {
             arr[i] = parseInt(prompt('Nhập:'))
-        }
-        document.write(arr)
-        // let max=Math.max.apply(Math,arr)
-        // document.write('Số lớn nhất là:'+max)
-        let max = arr[0];
-        let index = 0;
-        for (let i = 1; i < arr.length; i++) {
-            if (arr[i] > max) {
-                max = arr[i];
-                index = i;
+        } document.write(arr + '<br>')
+        let V = parseInt(prompt('Nhập số V:'))
+        for (j = 0; j < arr.length; j++) {
+            if (V == arr[j]) {arr.splice(j,1);
+                arr.push(0)
+                j--
+                console.log(arr)              
             }
-        }
-        document.write("max: " + max + " at position " + index);
+        }document.write('Mảng sau cùng:'+arr)
     </script>
 </body>
 

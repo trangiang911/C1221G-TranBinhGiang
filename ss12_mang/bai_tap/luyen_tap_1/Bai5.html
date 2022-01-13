@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str=prompt('Nhập chuỗi:')
+        let nAm=0
+        let pAm=0
+        let subStr=str.toLocaleLowerCase()
+        
+        for (i=0;i<subStr.length;i++){
+            let ch=str.charAt(i)
+            if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u'){nAm++}
+            else if(ch >= 'a'&& ch <= 'z'){pAm++}
+        }
+        document.write('Số nguyên âm:'+nAm)
+        document.write('Số phụ âm:'+pAm)
+    </script>
+</body>
+</html>

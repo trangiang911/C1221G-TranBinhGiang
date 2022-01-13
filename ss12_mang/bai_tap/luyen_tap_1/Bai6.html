@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = []
+        let doDai=parseInt(prompt('Nhập độ dài mảng:'))
+        let cont=0
+        for (i = 0; i < doDai; i++) {
+            arr[i] = parseInt(prompt('Nhập:'))
+        }
+        document.write(arr+'<br>')
+        let V=parseInt(prompt('Nhập số V:'))
+        for(j=0;j<arr.length;j++){
+            if(V==arr[j]){document.write('V is in array');break;}
+            else{cont++}    
+        } 
+        console.log(cont)
+        if(cont>=arr.length){
+            document.write('V is not in array')
+        } 
+        
+    </script>
+</body>
+</html>
