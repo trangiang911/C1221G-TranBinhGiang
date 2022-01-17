@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sum(x,y){
+            for(i=0;;i++){
+                if(x<y){
+                x=parseInt(prompt('Nhập lại x:'))
+                y=parseInt(prompt('Nhập lại y:'))            
+            }
+                else if(x>y){
+                    let tong=x+y
+                    alert('Tổng của x và y là:' + tong )
+                    console.log(tong)
+                    break;
+                }
+        }
+    }
+    let x=parseInt(prompt('Nhập x:'))
+    let y=parseInt(prompt('Nhập y:'))
+    sum(x,y)
+    </script>
+</body>
+</html>

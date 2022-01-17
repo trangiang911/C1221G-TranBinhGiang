@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function feetToMeter(feet){
+            meter=feet*0.305
+            console.log(meter)
+            document.write('số feet sang meter là:'+meter)
+        }
+        function meterToFeet(meter){
+            feet=meter*3.279
+            console.log(feet)
+            document.write('số meter sang feet là:'+feet)
+        }
+        let feet;
+        let meter;
+        let donViChuyenDoi=prompt('Nhập đơn vị muốn chuyển:')
+        if (donViChuyenDoi="feet"){
+            feet=parseFloat(prompt('Nhập số feet cần chuyển:'))
+            feetToMeter(feet)
+        }
+        else if (donViChuyenDoi="meter"){
+            meter=parseFloat(prompt('Nhập số meter cần chuyển:'))
+            meterToFeet(meter)
+        }
+    </script>
+</body>
+</html>
