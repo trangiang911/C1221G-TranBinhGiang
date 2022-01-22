@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let d=parseInt(prompt('Nhập chiều dài:'))
+        let r=parseInt(prompt('Nhập chiều rộng:'))
+        for(i=1;i<=r;i++){
+            if(i==1 || i==r){
+                for(j=1;j<=d;j++){
+                    document.write('*')
+                }
+            }
+            else{
+                document.write('*')
+                for(k=2;k<=(d-1);k++){
+                    document.write('&nbsp&nbsp')
+                }
+                document.write('*')
+            }
+            document.write('<br>')
+        }
+        
+    </script>
+        
+</body>
+</html>

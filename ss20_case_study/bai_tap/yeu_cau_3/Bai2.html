@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n=parseInt(prompt('Nhập độ dài mảng 1:'))
+        let m=parseInt(prompt('Nhập độ dài mảng 2:'))
+        let a=[]
+        let b=[]
+        let c=[]
+        let x;
+        function unique(array){
+            return  Array.from(new Set(array))
+        }
+        for(i=0;i<n;i++){
+            a[i]=parseInt(prompt('Nhập phần tử mảng a'))           
+        }
+        for(i=0;i<m;i++){
+            b[i]=parseInt(prompt('Nhập phần tử mảng b'))           
+        }
+        for(i=0;i<m;i++){
+            for(j=0;j<n;j++){
+                if(b[i]==a[j]){
+                    b.splice(i,1)
+                    i--
+                }
+        }
+    }
+    c=b
+    console.log(unique(c))
+    </script>
+</body>
+</html>

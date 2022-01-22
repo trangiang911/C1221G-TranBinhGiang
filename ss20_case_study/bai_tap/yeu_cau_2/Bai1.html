@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let x=parseFloat(prompt('Nhập Lương:'))
+        if(x<7){
+            thue=((7-x)*5)/100
+        }
+        else if(7<=x<=15){
+            thue=((7*5)/100)+((15-x)*10)/100
+        }
+        else if(x>15){
+            thue=((7*5)/100)+((8*10)/100)+(((x-15)*20)/100)
+            
+        }
+        alert('Thuế bạn phải nộp là:'+thue)
+    </script>
+</body>
+</html>

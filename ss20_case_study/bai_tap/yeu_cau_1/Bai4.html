@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let h=parseInt(prompt('Nhập chiều cao'))
+        for(i=h;i>=1;i--){
+            for(j=1;j<=(i-1);j++){
+                document.write('&nbsp&nbsp')
+            }
+            if(j==1){
+            for(k=1;k<=(h*2-1);k++){
+                document.write('*')
+            }
+            }
+            else if(j==h){
+                document.write('*')
+            }
+            else{
+                document.write('*')
+                for(g=2;g<=(h*2-i*2);g++){
+                    document.write('&nbsp&nbsp')
+                }
+                document.write('*')
+            }                      
+            document.write('<br>')
+        }
+    </script>
+</body>
+</html>

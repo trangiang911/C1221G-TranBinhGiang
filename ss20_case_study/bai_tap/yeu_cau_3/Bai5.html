@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <input type="text" id="kq"><br> -->
+    <input type="button" value="cafe" id="cafe" onclick="cafe()">
+    <input type="button" value="nước cam" id="nccam" onclick="nccam()">
+    <input type="button" value="nước lọc" id="ncloc" onclick="ncloc()">
+    <input type="button" value="tính tiền" id="tinhtien" onclick="tinhtien()">
+    <input type="reset" value="reset" id="bttnrs" onclick="reset()">
+    <script>
+        let tong=0
+        let tongLoc=0
+        let tongNcCam=0
+        let tongCaFe=0
+        function cafe(){
+            let cf=15
+            alert('Giá cf:'+cf+'K')
+            let slCaFe=parseInt(prompt('Nhập số lượng cafe:'))
+            tongCaFe=cf*slCaFe
+            console.log(tongCaFe)
+        }
+        function nccam(){
+            let cam=25
+            alert('Giá nước cam:'+cam+'K')
+            let slCam=parseInt(prompt('Nhập số lượng nước cam:'))
+            tongNcCam=cam*slCam
+        }
+        function ncloc(){
+            let loc=10
+            alert('Giá nước lọc'+loc+'k')
+            let slLoc=parseInt(prompt('Nhập số lượng nước lọc:'))
+            tongLoc=loc*slLoc
+        }
+        function tinhtien(){
+            tong=tongCaFe+tongNcCam+tongLoc
+            alert('Tổng thanh toán là:'+tong+'K')
+            tong=0
+            tongCaFe=0
+            tongNcCam=0
+            tongLoc=0
+        }
+        function reset(){
+            tong=0
+            tongCaFe=0
+            tongNcCam=0
+            tongLoc=0
+        }
+    </script>
+</body>
+</html>
