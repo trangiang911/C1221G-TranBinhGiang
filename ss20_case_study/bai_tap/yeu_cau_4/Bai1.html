@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function dinhDang(str) {
+            if (typeof str === 'string') {
+                y = str.toLocaleLowerCase().trim().replace(/\s+/g, ' ')
+                y1 = y.toLocaleLowerCase().replace(/\w\S*/g, w => w.replace(/^\w/, l => l.toUpperCase()));
+            }
+            return y1
+        }
+        function tuDaiNhat(string) {
+            let str = string.split(' ')
+            let max = 0
+            let word = null
+            for(i=0;i<str.length;i++) {
+                if (max < str[i].length) {
+                    max = str[i].length;
+                    Word = str[i];
+                }
+            }
+            return Word;
+        }
+        function main(){
+        let chuoi = prompt('Nhập chuỗi')
+        let x = dinhDang(chuoi)
+        let z = tuDaiNhat(chuoi)
+        document.write(chuoi+'<br>')
+        console.log(chuoi)
+        document.write(x+'<br>')
+        document.write(z)
+    }
+    main()
+    </script>
+</body>
+
+</html>
