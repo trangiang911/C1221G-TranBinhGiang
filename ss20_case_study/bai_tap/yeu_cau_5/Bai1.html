@@ -11,11 +11,25 @@
         let m=parseInt(prompt('Nhập số hàng'))
         let n=parseInt(prompt('Số cột'))
         let arr=[]
+        let sum=0
+        function Sum(array){
+            for(i=0;i<array.length;i++){
+              for(j=0;j<array[i].length;j++){
+                  if(array[i][j]%2==0){
+                    sum+=array[i][j]
+                }
+              }
+            }
+            return sum
+        }
         for(i=0;i<m;i++){
+            arr[i]= [m]
             for(j=0;j<n;j++){
                 arr[i][j]=parseInt(prompt('Nhập giá trị cho phần tử:'))
             }
         }
+        console.log(arr)
+        console.log(Sum(arr))
     </script>
 </body>
 </html>
