@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function unique(array){
+            return Array.from(new Set(array))
+        }
+        let s1=prompt('Nhập chuỗi 1')
+        let s2=prompt('Nhập chuỗi 2')
+        let s1Phu=unique(s1)
+        let s2Phu=unique(s2)
+        console.log(s1Phu)
+        console.log(s2Phu)
+        document.write('Ký tự chung của 2 xâu ký tự là:')
+        for(i=0;i<s1Phu.length;i++){
+            for(j=0;j<s2Phu.length;j++){
+                if(s1Phu[i]===s2Phu[j]){
+                    document.write(s1Phu[i]+' ')
+                }
+            }
+        }
+    </script>
+</body>
+</html>
