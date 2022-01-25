@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" value="" placeholder="Nhập từ 00-99" id="number1">
+    <input type="text" value="" placeholder="Nhập từ 00-99" id="number2">
+    <input type="text" value="" placeholder="Nhập từ 00-99" id="number3">
+    <input type="text" value="" placeholder="Nhập từ 00-99" id="number4">
+    <input type="text" value="" placeholder="Nhập từ 00-99" id="number5">
+    <input type="text" value="" placeholder="Nhập từ 00-99" id="number6"><br>
+    <input type="button" value="mua vé" onclick="xacNhan()">
+    <input type="button" value="Kết quả" onclick="Ketqua()"><br>
+    <input type="text" value="" placeholder="Nhập từ 00-99" id="number7">
+    <input type="text" value="" placeholder="Nhập từ 00-99" id="number8">
+    <input type="text" value="" placeholder="Nhập từ 00-99" id="number9">
+    <input type="text" value="" placeholder="Nhập từ 00-99" id="number10">
+    <input type="text" value="" placeholder="Nhập từ 00-99" id="number11">
+    <input type="text" value="" placeholder="Nhập từ 00-99" id="number12">
+    <script>
+        class Number{
+            constructor(x){
+                this.x=x
+            }
+            getX(){
+                return this.x
+            }
+            setX(x){
+                this.x=x
+            }
+        }
+        function xacNhan(){
+            let nhap=(parseInt(prompt('Nhập cách thức mua' + '\n' + '1.Tự mua số'+'\n'+'2.Hệ thống mua dùm')))
+            if(nhap==1){
+                let so1= new Number(document.getElementById('number1').value)
+                console.log(so1)
+                let so2= new Number(document.getElementById('number2').value)
+                console.log(so2)
+                let so3= new Number(document.getElementById('number3').value)
+                console.log(so3)
+                let so4= new Number(document.getElementById('number4').value)
+                console.log(so4)
+                let so5= new Number(document.getElementById('number5').value)
+                console.log(so5)
+                let so6= new Number(document.getElementById('number6').value)
+                console.log(so6)
+            }
+            else if(nhap==2){
+                let so1= new Number(Math.floor(Math.random()*(99-00)+00))
+                document.getElementById('number1').value=so1.x
+                console.log(so1)
+                let so2= new Number(Math.floor(Math.random()*(99-00)+00))
+                document.getElementById('number2').value=so2.x
+                console.log(so2)
+                let so3= new Number(Math.floor(Math.random()*(99-00)+00))
+                document.getElementById('number3').value=so3.x
+                console.log(so3)
+                let so4= new Number(Math.floor(Math.random()*(99-00)+00))
+                document.getElementById('number4').value=so4.x
+                console.log(so4)
+                let so5= new Number(Math.floor(Math.random()*(99-00)+00))
+                document.getElementById('number5').value=so5.x
+                console.log(so5)
+                let so6= new Number(Math.floor(Math.random()*(99-00)+00))
+                document.getElementById('number6').value=so6.x
+                console.log(so6)
+            }
+        }
+        function Ketqua(){
+                let so7= new Number(Math.floor(Math.random()*(99-00)+00))
+                document.getElementById('number7').value=so7.x
+                let so8= new Number(Math.floor(Math.random()*(99-00)+00))
+                document.getElementById('number8').value=so8.x
+                let so9= new Number(Math.floor(Math.random()*(99-00)+00))
+                document.getElementById('number9').value=so9.x
+                let so10= new Number(Math.floor(Math.random()*(99-00)+00))
+                document.getElementById('number10').value=so10.x
+                let so11= new Number(Math.floor(Math.random()*(99-00)+00))
+                document.getElementById('number11').value=so11.x
+                let so12= new Number(Math.floor(Math.random()*(99-00)+00))
+                document.getElementById('number12').value=so12.x 
+                let so1= new Number(document.getElementById('number1').value)
+                let so2= new Number(document.getElementById('number2').value)
+                let so3= new Number(document.getElementById('number3').value)
+                let so4= new Number(document.getElementById('number4').value)
+                let so5= new Number(document.getElementById('number5').value)
+                let so6= new Number(document.getElementById('number6').value)
+                if(so1.x==so7.x && so2.x==so8.x && so3.x==so9.x&& so4.x==so10.x && so5.x==so11.x && so6.x==so12.x){
+                    alert('Tỷ phú')
+                }
+                else if(so2.x==so8.x && so3.x==so9.x&& so4.x==so10.x && so5.x==so11.x && so6.x==so12.x){
+                    alert('triệu phú')
+                }
+                else if (so3.x==so9.x&& so4.x==so10.x && so5.x==so11.x && so6.x==so12.x){
+                    alert('khuyến khích')
+                }
+                else{
+                    alert('ko trúng')
+                }
+    }
+    </script>
+</body>
+</html>
