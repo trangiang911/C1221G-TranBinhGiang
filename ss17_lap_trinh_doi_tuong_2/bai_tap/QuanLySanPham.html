@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+        <style>
+        table{
+            border-collapse: collapse;
+        }
+        tr:nth-child(even){
+            background-color: #dddddd;
+        }
+        th{
+            background-color: beige;
+        }
+        td,th {
+            height: 40px;
+            width: 150px;
+            text-align: left;
+            padding-left: 10px;
+
+        }
+
+        input[type = "text"] {
+            height: 20px;
+            width: 250px;
+        }
+
+        input[type = "button"] {
+            border: none;
+            height: 30px;
+            width: 80px;
+            border-radius: 5px;
+            color: white;
+            background: forestgreen;
+        }
+
+        input[type = "button"]:hover{
+            background: darkgreen;
+        }
+        </style>
+
+</head>
+<body>
+<form>
+    <h3> Add New Product</h3>
+    <input type="text" id="bienSo" placeholder="Nhập vào biển số xe">
+    <input type="text" id="chuSoHuu" placeholder="Nhập tên chủ sở hữu">
+    <input type="text" id="dungTich" placeholder="Nhập dung tích xe">
+    <input type="button" name="change" id="changeValue" value="Add" onclick="changeProduct()">
+</form>
+<h3> Display All Product</h3>
+
+<h4> Product Name</h4>
+<div id="display"></div>
+
+</body>
+<script>
+
+    class XeMay{
+        constructor(bienKS, chuSoHuu, dungTich) {
+            this.dungTich = dungTich;
+            this.bienKS = bienKS;
+            this.chuSoHuu = chuSoHuu;
+
+        }
+
+        getBienKS() {
+            return this.bienKS;
+        }
+
+        setBienKS(value) {
+            this.bienKS = value;
+        }
+
+        getChuSoHuu() {
+            return this.chuSoHuu;
+        }
+
+        setChuSoHuu(value) {
+            this.chuSoHuu = value;
+        }
+
+        getDungTich() {
+            return this.dungTich;
+        }
+
+        setDungTich(value) {
+            this.dungTich = value;
+        }
+        toString(){
+            return "Biển số: "+this.getBienKS()+" Chủ sở hữu: "+ this.getChuSoHuu()+ " Dung tích: "+this.getDungTich();
+        }
+
+    }
+
+    let xe1 = new XeMay("43C1-34532","Pham Viet Khoa",110);
+    let xe2 = new XeMay("92F1-34832","Pham Viet Kieu",110);
+    let xe3 = new XeMay("43C1-34132","Pham Viet Rin",110);
+
+    let editing = false;
+    let idEditing = 0;
+
+    let danhSachXe = [xe1,xe2,xe3];
+
+    hienThi(danhSachXe);
+
+    function hienThi(danhSach) {
+        let tableString = "<table>\n" +
+            "    <tr>\n" +
+            "        <th>STT</th>\n" +
+            "        <th>Biểm Kiểm Soát</th>\n" +
+            "        <th>Chủ Sở Hữu</th>\n" +
+            "        <th>Dung Tích Xilanh</th>\n" +
+            "        <th></th>\n" +
+            "        <th></th>\n" +
+            "    </tr>";
+
+        for (let i = 0; i < danhSach.length; i++) {
+            tableString += "<tr>";
+            tableString += '<td>' +(i+1) + '</td>';
+            tableString += '<td>' + danhSach[i].getBienKS() + '</td>';
+            tableString += '<td>' + danhSach[i].getChuSoHuu() + '</td>';
+            tableString += '<td>' + danhSach[i].getDungTich() + '</td>';
+            tableString += '<td> <input type="button"  value = "edit" onclick="editProduct('+i+')"></td>';
+            tableString += '<td> <input type="button" value = "delete" onclick="deleteProduct('+i+')"></td>';
+            tableString += "</tr>";
+        }
+
+        tableString += "</table>";
+        document.getElementById("display").innerHTML = tableString;
+    }
+
+    function changeProduct() {
+        let bienSo = document.getElementById("bienSo").value;
+        let chuSoHuu = document.getElementById("chuSoHuu").value;
+        let dungTich = document.getElementById("dungTich").value;
+
+        if (editing){
+
+            if (bienSo!="" && chuSoHuu!="" && dungTich!=""){
+                danhSachXe[idEditing].setBienKS(bienSo);
+                danhSachXe[idEditing].setChuSoHuu(chuSoHuu);
+                danhSachXe[idEditing].setDungTich(dungTich);
+
+                document.getElementById("bienSo").value = "";
+                document.getElementById("chuSoHuu").value = "";
+                document.getElementById("dungTich").value = "";
+
+                editing = false;
+                idEditing = 0;
+                document.getElementById("changeValue").value = "Add";
+            }else {
+                alert("Cần nhập tên Sản Phẩm");
+            }
+        }
+
+        else {
+            if (bienSo!="" && chuSoHuu!="" &&dungTich!=""){
+                let xeMoi = new XeMay(bienSo,chuSoHuu,dungTich);
+                document.getElementById("bienSo").value = "";
+                document.getElementById("chuSoHuu").value = "";
+                document.getElementById("dungTich").value = "";
+
+                danhSachXe.push(xeMoi);
+            }else {
+                alert("Cần nhập tên Sản Phẩm");
+            }
+
+        }
+
+        hienThi(danhSachXe);
+    }
+
+    function deleteProduct(id) {
+        let conf= confirm("Bạn có muốn xóa sản phẩm "+danhSachXe[id]);
+        if (conf){
+            danhSachXe.splice(id,1);
+            hienThi(danhSachXe);
+        }
+    }
+
+    function editProduct(id) {
+        document.getElementById("changeValue").value = "edit";
+
+        document.getElementById("bienSo").value = danhSachXe[id].getBienKS();
+        document.getElementById("chuSoHuu").value = danhSachXe[id].getChuSoHuu();
+        document.getElementById("dungTich").value = danhSachXe[id].getDungTich();
+
+        idEditing = id;
+        editing = true;
+    }
+
+</script>
+</html>

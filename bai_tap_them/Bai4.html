@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="matk" placeholder="Nhập mã tài khoản">
+        <input type="text" id="name" placeholder="Nhập tên chủ tài khoản">
+        <input type="text" id="namebank" placeholder="Nhập tên ngân hàng">
+        <input type="text" id="sum" placeholder="Nhập tổng số tiền trong tài khoản">
+        <input type="button" value="add" onclick="addopp()">
+    </form>
+    <h3>Bảng dữ liệu</h3>
+    <div id="display"></div>
+    <script>
+        class TaiKhoanNganHang {
+            constructor(maTK,name,nameBank,sum){
+            this.maTK=maTK
+            this.name=name
+            this.nameBank=nameBank
+            this.sum=sum
+            }
+            getMaTK(){
+                return this.maTK
+            }
+            setMaTK(maTK){
+                this.maTK=maTK
+            }
+            getName(){
+                return this.name
+            }
+            setName(name){
+                this.name=name
+            }
+            getNameBank(){
+                return this.nameBank
+            }
+            setNameBank(nameBank){
+                this.nameBank=nameBank
+            }
+            getSum(){
+                return this.sum
+            }
+            setSum(){
+                this.sum=sum
+            }
+            toString(){
+                return 'Mã tài khoản: '+this.getMaTK()+'Tên: '+this.getName()+'Tên ngân hàng: '+this.getNameBank()+'Số tiền trong tài khoản'+this.getSum()
+            }
+        }
+    </script>
+</body>
+</html>
