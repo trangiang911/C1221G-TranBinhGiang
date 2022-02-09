@@ -23,7 +23,7 @@
             }
           }
           let str3 = str2.join("");
-          return str3.trim().toLocaleUpperCase();
+          return str3.trim().replace(/ /g, "").toLocaleUpperCase();
         }
       }
       console.log(vietTat(chuoi));
