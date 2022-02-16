@@ -15,7 +15,6 @@
       }
       console.log(arr);
       function kiemTra(array) {
-        let num = 0;
         let arrFibonac = [];
         let arrKQ = [];
         let max = Math.max.apply(Math, array);
@@ -24,10 +23,10 @@
         for (let i = 2; i < max; i++) {
           arrFibonac[i] = arrFibonac[i - 2] + arrFibonac[i - 1];
         }
-        let subArr = Array.from(new Set(arrFibonac));
-        for (let i = 0; i < array.length; i++) {
-          for (let j = 0; j < subArr.length; j++) {
-            if (array[i] == subArr[j]) {
+        arrFibonac.splice(1,1);
+        for (let i = 0; i < arr.length; i++) {
+          for (let j = 0; j < arrFibonac.length; j++) {
+            if (array[i] == arrFibonac[j]) {
               arrKQ.push(array[i]);
             }
           }

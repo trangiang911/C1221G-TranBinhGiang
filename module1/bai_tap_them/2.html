@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <script>
+      let number;
+      let checking;
+      do {
+        number = prompt("nhap vao do dai cua mang");
+        checking = parseInt(number) == number && number > 0 && number < 50;
+      } while (!checking);
+      number = parseInt(number);
+      let myArray = new Array(number);
+      for (let i = 0; i < myArray.length; i++) {
+        myArray[i] = parseInt(prompt("Nhap vao phan tu thu: " + i));
+      }
+      document.write("Mang vua nhap vao la: " + myArray);
+      document.write("<br>");
+      let tongChiaHetChoNam = 0;
+      let count = 0;
+      for (let i = 0; i < myArray.length; i++) {
+        if (i % 3 == 0) {
+          if (myArray[i] % 5 == 0) {
+            tongChiaHetChoNam += myArray[i];
+            count++;
+          }
+        }
+      }
+      document.write(
+        "Gia Tri trung binh Cac Phan tu chia het cho 5 o vi tri chia het cho 3 la: " +
+          tongChiaHetChoNam / count
+      );
+    </script>
+  </body>
+</html>

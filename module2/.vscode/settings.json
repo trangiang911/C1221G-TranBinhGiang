@@ -1,0 +1,9 @@
+{
+    "java.project.sourcePaths": [
+        "ss1_introduction_to_java/thuc_hanh/su_dung_toan_tu/src",
+        "ss1_introduction_to_java/thuc_hanh/khai_bao_va_su_dung_bien/src",
+        "ss1_introduction_to_java/thuc_hanh/hien_thi_thoi_gian/src",
+        "ss1_introduction_to_java/thuc_hanh/giai_phuong_trinh_bac_nhat/src",
+        "ss1_introduction_to_java/thuc_hanh/tinh_so_ngay_trong_thang/src"
+    ]
+}

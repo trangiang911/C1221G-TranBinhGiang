@@ -69,13 +69,13 @@
 
       function hienthi(arr) {
         let tableString =
-          "<table>\n" +
+          '<table border="1" style="border-collapse: collapse">\n' +
           "   <tr>\n" +
           "   <th>Stt</th>\n" +
           "   <th>Mã tài khoản</th>\n" +
           "   <th>Tên khách hàng</th>\n" +
-          "   <th>Tên Ngân hàng</th>" +
-          "   <th>Tổng tiền trong tài khoản</th>" +
+          "   <th>Tên Ngân hàng</th>\n" +
+          "   <th>Tổng tiền trong tài khoản</th>\n" +
           "   <th></th>" +
           "   <th></th>" +
           "   </tr>";
@@ -97,11 +97,10 @@
         let nameBank = document.getElementById("namebank").value;
         let sum = document.getElementById("tongtien").value;
         let taiKhoan = new TaiKhoanNganHang(maTK, name, nameBank, sum);
-        if(maTK.length!=5 || isNaN(maTK)){
-            alert('Nhập lại')           
-        }
-        else{
-            danhSach.push(taiKhoan)
+        if (maTK.length != 5 || isNaN(maTK)) {
+          alert("Nhập lại");
+        } else {
+          danhSach.push(taiKhoan);
         }
         hienthi(danhSach);
       }

@@ -24,14 +24,14 @@
       let m = parseInt(prompt("nhập độ dài mảng"));
       for (i = 0; i < m; i++) {
         arr[i] = parseInt(prompt("Nhập phần tử mảng:"));
-        if (kiemTra(arr[i])) {
+        if (kiemTra(arr[i]) && arr1.indexOf(arr[i])==-1) {
           arr1.push(arr[i]);
         }
       }
       arr1.sort(function (x, y) {
         return x - y;
       });
-      console.log(Array.from(new Set(arr1)));
+      console.log(arr1);
     </script>
   </body>
 </html>

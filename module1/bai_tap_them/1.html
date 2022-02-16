@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="mtk" placeholder="Mã Tài Khoản" >
+<input type="text" id="ctk" placeholder="Chủ Tài Khoản" >
+<input type="text" id="tnh" placeholder="Tên Ngân Hàng" >
+<input type="text" id="tl" placeholder="Tiền Lãi" >
+<button type="submit" onclick="add()">Thêm</button>
+<button type="reset">Nhập lại</button>
+<p id="ketQua"></p>
+<script>
+    class LopNganHang {
+       constructor(maTaiKhoan, chuTaiKhoan, tenNganHang, tienLai) {
+           this.maTaiKhoan = maTaiKhoan;
+           this.chuTaiKhoan = chuTaiKhoan;
+           this.tienLai = tienLai;
+           this.tenNganHang = tenNganHang;
+       }
+        setMaTaiKhoan(soTaiKhoan) {
+            this.maTaiKhoan = soTaiKhoan;
+        }
+        getMaTaiKhoan() {
+            return this.maTaiKhoan;
+        }
+        setTenNganHang(nganHang) {
+            this.tenNganHang = nganHang;
+        }
+        getTenNganHang() {
+            return this.tenNganHang;
+        }
+        setChuTaiKhoan(tenTaiKhoan) {
+            this.chuTaiKhoan = tenTaiKhoan;
+        }
+        getChuTaiKhoan() {
+            return this.chuTaiKhoan;
+        }
+        setTienLai(lai) {
+            this.tienLai = lai;
+        }
+        getTienLai() {
+            return this.tienLai;
+        }
+        toString(){
+           return "Mã Tài Khoản:" + this.maTaiKhoan + "Chủ Tài Khoản:" + this.chuTaiKhoan + "Tên Ngân Hàng:" + this.tenNganHang + "Tiền lãi:" + this.tienLai;
+        }
+    }
+    let result = [];
+    function add() {
+        let mtk = document.getElementById("mtk").value;
+        let ctk = document.getElementById("ctk").value;
+        let tnh = document.getElementById("tnh").value;
+        let tl = document.getElementById("tl").value;
+        let taiKhoan = new LopNganHang(mtk,ctk,tnh,tl);
+        if(mtk.length !== 5 || isNaN(mtk)){
+            alert("Vui Lòng nhập đúng mã tài khoản!");
+        }
+        else
+        {
+            result.push(taiKhoan);
+        }
+        hienthi(result);
+    }
+    function hienthi(danhsach) {
+        let bang = '<table border="1" style="border-collapse: collapse">\n' +
+            '    <tr>\n' +
+            '        <th>STT</th>\n' +
+            '        <th>Mã tài khoản</th>\n' +
+            '        <th>Chủ tài khoản</th>\n' +
+            '        <th>Tên ngân hàng</th>\n' +
+            '        <th>Tổng tiền</th>\n' +
+            '    </tr>';
+        for (let i = 0; i < danhsach.length; i++) {
+            bang += '<tr>\n ' +
+                '<td>' + (i + 1) + '</td>\n' +
+                '<td>' + danhsach[i].getMaTaiKhoan() + '</td>\n' +
+                '<td>' + danhsach[i].getChuTaiKhoan() + '</td>\n' +
+                '<td>' + danhsach[i].getTenNganHang() + '</td>\n' +
+                '<td>' + danhsach[i].getTienLai() + '</td>\n' +
+                '</tr>';
+        }
+        bang += '</table>'
+        document.getElementById("ketQua").innerHTML = bang;
+    }
+    
+
+</script>
+</body>
+</html>

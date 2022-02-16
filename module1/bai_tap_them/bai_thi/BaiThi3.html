@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>Quản lý sách</h3>
+    <div id="display"></div>
+    <form>
+      <input
+        type="button"
+        id="addsachcu"
+        value="Thêm sách đã có"
+        onclick="addOld()"
+      />
+      <input
+        type="button"
+        id="addsachmoi"
+        value="Thêm sách mới"
+        onclick="addNew()"
+      />
+      <input type="button" id="muon" value="Mượn sách" onclick="muonSach()"/>
+      <input
+        type="button"
+        id="hienthisachnhieunhat"
+        value="Hiển thị sách nhiều nhất"
+      />
+    </form>
+    <script>
+      class QuanLySach {
+        constructor(msSach, name, namSX, sL, tinhTrang) {
+          this.msSach = msSach;
+          this.name = name;
+          this.namSX = namSX;
+          this.sL = sL;
+          this.tinhTrang = tinhTrang;
+        }
+        getMsSach() {
+          return this.msSach;
+        }
+        setMsSach(msSach) {
+          this.msSach = msSach;
+        }
+        getName() {
+          return this.name;
+        }
+        setName(name) {
+          this.name = name;
+        }
+        getNamSX() {
+          return this.namSX;
+        }
+        setNamSX(namSX) {
+          this.namSX = namSX;
+        }
+        getSL() {
+          return this.sL;
+        }
+        setSL(sl) {
+          this.sl = sl;
+        }
+        getTinhTrang() {
+          return this.tinhTrang;
+        }
+        setTinhTrang(tinhTrang) {
+          this.tinhTrang = tinhTrang;
+        }
+      }
+      let list = [];
+      function hienthi(arr) {
+        let tableString =
+          '<table border="1" style="border-collapse: collapse">\n' +
+          "   <tr>\n" +
+          '   <th>Mã số sách</th>\n' +
+          "   <th>Tên sách</th>\n" +
+          "   <th>Năm sản xuất</th>\n" +
+          "   <th>Số quyển</th>\n" +
+          "   <th>Tình trạng</th>\n" +
+          "   </tr>";
+        for (let i = 0; i < list.length; i++) {
+          tableString += "<tr>";
+          tableString += "<td>" + list[i].getMsSach() + "</td>";
+          tableString += "<td>" + list[i].getName() + "</td>";
+          tableString += "<td>" + list[i].getNamSX() + "</td>";
+          tableString += "<td>" + list[i].getSL() + "</td>";
+          tableString += "<td>" + list[i].getTinhTrang() + "</td>";
+          tableString += "</tr>";
+        }
+        tableString += "</table>";
+        document.getElementById("display").innerHTML = tableString;
+      }
+      function addNew() {
+        let msSach;
+        do{
+            msSach=prompt('Nhập mã số sách')
+        }while(msSach.length!=5)
+        let name = prompt("Nhập tên sách");
+        let namSX;
+        do {
+          namSX = prompt("Nhập năm sản xuất");
+        } while (namSX.length != 4);
+        let sl = parseInt(prompt("Nhập số lượng sách"));
+        let tinhTrang = sl > 0 ? true : false;
+        let sach = new QuanLySach(msSach, name, namSX, sl, tinhTrang);
+        list.push(sach);
+        hienthi(list);
+      }
+      function muonSach(){
+          let sl1=parseInt(prompt('Nhập mã số sách cần xóa'))
+        for(let i=0;i<list.length;i++){
+            
+        }
+      }
+    </script>
+  </body>
+</html>
